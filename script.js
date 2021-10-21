@@ -11,35 +11,109 @@ var currentHour = now.format("k");
 // Time difference determiner
 function timeDeterminer() {
 if (currentHour < 9) {
-    $(".col-10").addClass("future");
-} else if (currentHour < 10 ) {
-    $(".nineAM").addClass("present");
-} else if (currentHour < 11) {
-    $(".nineAM").addClass("past");
-    $(".tenAM").addClass("present");
-} else if (currentHour < 12) {
-    $(".tenAM").addClass("past");
-    $(".elevenAM").addClass("present");
-} else if (currentHour < 13) {
-    $(".elevenAM").addClass("past");
-    $(".twelvePM").addClass("present");
-} else if (currentHour < 14) {
-    $(".twelvePM").addClass("past");
-    $(".onePM").addClass("present");
-} else if (currentHour < 15) {
-    $(".onePM").addClass("past");
-    $(".twoPM").addClass("present");
-} else if (currentHour < 16) {
-    $(".twoPM").addClass("past");
-    $(".threePM").addClass("present");
-} else if (currentHour < 17) {
-    $(".threePM").addClass("past");
-    $(".fourPM").addClass("present");
-} else if (currentHour < 18) {
-    $(".fourPM").addClass("past");
-    $(".fivePM").addClass("present");
-} else if (currentHour >= 18) {
-    $(".col-10").addClass("past");
+    $(".col-10").removeClass("past").removeClass("present").addClass("future");
+} 
+else if (currentHour < 10 ) {
+    $(".nineAM").removeClass("past").removeClass("future").addClass("present");
+    $(".tenAM").removeClass("past").removeClass("present").addClass("future");
+    $(".elevenAM").removeClass("past").removeClass("present").addClass("future");
+    $(".twelvePM").removeClass("past").removeClass("present").addClass("future");
+    $(".onePM").removeClass("past").removeClass("present").addClass("future");
+    $(".twoPM").removeClass("past").removeClass("present").addClass("future");
+    $(".threePM").removeClass("past").removeClass("present").addClass("future");
+    $(".fourPM").removeClass("past").removeClass("present").addClass("future");
+    $(".fivePM").removeClass("past").removeClass("present").addClass("future");
+} 
+else if (currentHour < 11) {
+    $(".nineAM").removeClass("future").removeClass("present").addClass("past");
+    $(".tenAM").removeClass("past").removeClass("future").addClass("present");
+    $(".elevenAM").removeClass("past").removeClass("present").addClass("future");
+    $(".twelvePM").removeClass("past").removeClass("present").addClass("future");
+    $(".onePM").removeClass("past").removeClass("present").addClass("future");
+    $(".twoPM").removeClass("past").removeClass("present").addClass("future");
+    $(".threePM").removeClass("past").removeClass("present").addClass("future");
+    $(".fourPM").removeClass("past").removeClass("present").addClass("future");
+    $(".fivePM").removeClass("past").removeClass("present").addClass("future");
+} 
+else if (currentHour < 12) {
+    $(".nineAM").removeClass("future").removeClass("present").addClass("past");
+    $(".tenAM").removeClass("future").removeClass("present").addClass("past");
+    $(".elevenAM").removeClass("past").removeClass("future").addClass("present");
+    $(".twelvePM").removeClass("past").removeClass("present").addClass("future");
+    $(".onePM").removeClass("past").removeClass("present").addClass("future");
+    $(".twoPM").removeClass("past").removeClass("present").addClass("future");
+    $(".threePM").removeClass("past").removeClass("present").addClass("future");
+    $(".fourPM").removeClass("past").removeClass("present").addClass("future");
+    $(".fivePM").removeClass("past").removeClass("present").addClass("future");
+} 
+else if (currentHour < 13) {
+    $(".nineAM").removeClass("future").removeClass("present").addClass("past");
+    $(".tenAM").removeClass("future").removeClass("present").addClass("past");
+    $(".elevenAM").removeClass("future").removeClass("present").addClass("past");
+    $(".twelvePM").removeClass("past").removeClass("future").addClass("present");
+    $(".onePM").removeClass("past").removeClass("present").addClass("future");
+    $(".twoPM").removeClass("past").removeClass("present").addClass("future");
+    $(".threePM").removeClass("past").removeClass("present").addClass("future");
+    $(".fourPM").removeClass("past").removeClass("present").addClass("future");
+    $(".fivePM").removeClass("past").removeClass("present").addClass("future");
+} 
+else if (currentHour < 14) {
+    $(".nineAM").removeClass("future").removeClass("present").addClass("past");
+    $(".tenAM").removeClass("future").removeClass("present").addClass("past");
+    $(".elevenAM").removeClass("future").removeClass("present").addClass("past");
+    $(".twelvePM").removeClass("future").removeClass("present").addClass("past");
+    $(".onePM").removeClass("past").removeClass("future").addClass("present");
+    $(".twoPM").removeClass("past").removeClass("present").addClass("future");
+    $(".threePM").removeClass("past").removeClass("present").addClass("future");
+    $(".fourPM").removeClass("past").removeClass("present").addClass("future");
+    $(".fivePM").removeClass("past").removeClass("present").addClass("future");
+} 
+else if (currentHour < 15) {
+    $(".nineAM").removeClass("future").removeClass("present").addClass("past");
+    $(".tenAM").removeClass("future").removeClass("present").addClass("past");
+    $(".elevenAM").removeClass("future").removeClass("present").addClass("past");
+    $(".twelvePM").removeClass("future").removeClass("present").addClass("past");
+    $(".onePM").removeClass("future").removeClass("present").addClass("past");
+    $(".twoPM").removeClass("past").removeClass("future").addClass("present");
+    $(".threePM").removeClass("past").removeClass("present").addClass("future");
+    $(".fourPM").removeClass("past").removeClass("present").addClass("future");
+    $(".fivePM").removeClass("past").removeClass("present").addClass("future");
+} 
+else if (currentHour < 16) {
+    $(".nineAM").removeClass("future").removeClass("present").addClass("past");
+    $(".tenAM").removeClass("future").removeClass("present").addClass("past");
+    $(".elevenAM").removeClass("future").removeClass("present").addClass("past");
+    $(".twelvePM").removeClass("future").removeClass("present").addClass("past");
+    $(".onePM").removeClass("future").removeClass("present").addClass("past");
+    $(".twoPM").removeClass("future").removeClass("present").addClass("past");
+    $(".threePM").removeClass("past").removeClass("future").addClass("present");
+    $(".fourPM").removeClass("past").removeClass("present").addClass("future");
+    $(".fivePM").removeClass("past").removeClass("present").addClass("future");
+} 
+else if (currentHour < 17) {
+    $(".nineAM").removeClass("future").removeClass("present").addClass("past");
+    $(".tenAM").removeClass("future").removeClass("present").addClass("past");
+    $(".elevenAM").removeClass("future").removeClass("present").addClass("past");
+    $(".twelvePM").removeClass("future").removeClass("present").addClass("past");
+    $(".onePM").removeClass("future").removeClass("present").addClass("past");
+    $(".twoPM").removeClass("future").removeClass("present").addClass("past");
+    $(".threePM").removeClass("future").removeClass("present").addClass("past");
+    $(".fourPM").removeClass("past").removeClass("future").addClass("present");
+    $(".fivePM").removeClass("past").removeClass("present").addClass("future");
+} 
+else if (currentHour < 18) {
+    $(".nineAM").removeClass("future").removeClass("present").addClass("past");
+    $(".tenAM").removeClass("future").removeClass("present").addClass("past");
+    $(".elevenAM").removeClass("future").removeClass("present").addClass("past");
+    $(".twelvePM").removeClass("future").removeClass("present").addClass("past");
+    $(".onePM").removeClass("future").removeClass("present").addClass("past");
+    $(".twoPM").removeClass("future").removeClass("present").addClass("past");
+    $(".threePM").removeClass("future").removeClass("present").addClass("past");
+    $(".fourPM").removeClass("future").removeClass("present").addClass("past");
+    $(".fivePM").removeClass("past").removeClass("future").addClass("present");
+} 
+else if (currentHour >= 18) {
+    $(".col-10").removeClass("present").removeClass("future").addClass("past");
 }
 };
 
