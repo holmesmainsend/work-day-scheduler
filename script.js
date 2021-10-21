@@ -118,7 +118,7 @@ else if (currentHour >= 18) {
 };
 
 
-// Time determiner refresher
+// Time difference determiner refresher
 function timeRefresher() {
     setInterval(timeDeterminer, 1000);
 }; 
