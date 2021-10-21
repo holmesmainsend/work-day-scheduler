@@ -1,3 +1,7 @@
+// TODO: add text editing feature
+// TODO: add text saving feature upon icon click (to local storage)
+// TODO: resolve alignment issues
+
 // Current day
 var now = moment();
 var nowFormatted = now.format("dddd" + "," + " MMMM Do");
