@@ -1,6 +1,6 @@
 // TODO: add text editing feature
 // TODO: add text saving feature upon icon click (to local storage)
-// TODO: resolve alignment issues
+// TODO: resolve alignment/spacing issues
 
 // Current day
 var now = moment();
@@ -127,3 +127,11 @@ function timeRefresher() {
     setInterval(timeDeterminer, 1000);
 }; 
 timeRefresher();
+
+
+// Schedule editing
+$(".col-10").on("click", function() {
+    var text = $(this).text().trim();
+    console.log(text);
+
+});
