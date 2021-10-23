@@ -1,5 +1,5 @@
 // TODO: retrieve text on page load (local storage)
-
+// TODO: fix time slot color class assignments
 
 // Current day
 var now = moment();
@@ -7,27 +7,36 @@ var nowFormatted = now.format("dddd" + "," + " MMMM Do");
 $("#currentDay").append(nowFormatted);
 
 
-// Put getStorage function here
+// Schedule notes loader
+for (i = 0; i < localStorage.length; i++) {
+var slotKey = localStorage.key(i);
+console.log(slotKey);
+var slotText = localStorage.getItem("09");
+console.log(slotText);
+// $(slotText).
+};
+
+// $(".09").text("muffins");
+
+
 // localStorage."get all items", gives an array
 // loop through array
 // key value as identifier $(key).append(value)
 // grab IDs with $(this)
 
 
-// Time difference determiner
-
+// Time determiner
+function timeDeterminer() {
+    var now = moment();
+    var currentHour = now.format("k");
+    
     //TODO:
     // $(".row").each(function() {
 //     $(this).className
 //     parse the slice
 //     compare integer values (< = past, === present, > = future) remove/add appropriate classes
 // })
-
-
-function timeDeterminer() {
-    var now = moment();
-    var currentHour = now.format("k");
-    
+};
 
     // if (currentHour < 9) {
 //     $(".col-10").removeClass("past").removeClass("present").addClass("future");
@@ -135,10 +144,9 @@ function timeDeterminer() {
 // else if (currentHour >= 18) {
 //     $(".col-10").removeClass("present").removeClass("future").addClass("past");
 // }
-};
 
 
-// Time difference determiner refresher
+// Time determiner refresher
 function timeRefresher() {
     setInterval(timeDeterminer, 1000);
 }; 
@@ -148,8 +156,6 @@ timeRefresher();
 // Schedule editing
 $(".saveBtn").on("click", function() {
     var text = $(this).siblings(".description").val().trim();
-    console.log(text);
     var key = $(this).siblings()[1].className.slice(19, 21);
-    console.log(key);
     localStorage.setItem(key, text);
 });
