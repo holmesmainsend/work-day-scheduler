@@ -1,6 +1,6 @@
-// TODO: add text editing feature
-// TODO: add text saving feature upon icon click (to local storage)
-// TODO: resolve alignment/spacing issues
+// TODO: change classes to 09, etc and splice accordingly
+// TODO: retrieve text on page load (local storage)
+
 
 // Current day
 var now = moment();
@@ -8,15 +8,27 @@ var nowFormatted = now.format("dddd" + "," + " MMMM Do");
 $("#currentDay").append(nowFormatted);
 
 
-// Current time checker
-var currentHour = now.format("k");
+// Put getStorage function here
+// localStorage."get all items", gives an array
+// loop through array
+// key value as identifier $(key).append(value)
+// grab IDs with $(this)
 
 
 // Time difference determiner
 function timeDeterminer() {
+    var now = moment();
+    var currentHour = now.format("k");
 if (currentHour < 9) {
     $(".col-10").removeClass("past").removeClass("present").addClass("future");
 } 
+
+// $(".row").each(function() {
+    // $(this).className
+    // parse the slice
+    // compare integer values (< = past, === present, > = future) remove/add appropriate classes
+// })
+
 else if (currentHour < 10 ) {
     $(".nineAM").removeClass("past").removeClass("future").addClass("present");
     $(".tenAM").removeClass("past").removeClass("present").addClass("future");
@@ -130,8 +142,9 @@ timeRefresher();
 
 
 // Schedule editing
-$(".col-10").on("click", function() {
-    var text = $(this).text().trim();
+$(".saveBtn").on("click", function() {
+    var text = $(this).siblings(".description").val().trim();
     console.log(text);
-
+    var key = $(this).siblings()[1].className.slice(19, 25);
+    localStorage.setItem(key, text);
 });
