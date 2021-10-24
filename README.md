@@ -2,7 +2,7 @@
 ![Screenshot of Website](workscheduler-capture.png)
 
 ## Purpose
-A web API allowing you to organize your work day, hour by hour, with editable tasks.
+A web API allowing you to organize your work day, hour by hour, with editable tasks. Time slots change color to indicate whether they are currently in the past (gray), present (red), or future (green).
 
 ## Built With
 * JQuery
