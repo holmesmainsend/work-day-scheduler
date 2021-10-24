@@ -5,10 +5,8 @@ $("#currentDay").append(nowFormatted);
 
 // Schedule notes loader
 for (i = 0; i < localStorage.length; i++) {
-var slotKey = parseInt(localStorage.key(i));
-console.log(slotKey);
+var slotKey = localStorage.key(i);
 var slotText = localStorage.getItem(slotKey);
-console.log(slotText);
 $("." + slotKey).text(slotText);
 };
 
@@ -26,17 +24,27 @@ function timeDiff() {
     var currentHourParsed = parseInt(currentHour);
 
     for (i = 0; i < 9; i++) {
-    var hourVal = $(".description")[i].className.slice(19, 21);
-    var hourValParsed = parseInt(hourVal);
+    var timeSlot = $(".description")[i].className.slice(19, 21);
+    var timeSlotParsed = parseInt(timeSlot);
 
-    if (hourValParsed < currentHourParsed) {
-        $("." + [i + 9]).removeClass("present").removeClass("future").addClass("past");
-
-    } else if (hourValParsed === currentHourParsed) {
-        $("." + [i + 9]).removeClass("past").removeClass("future").addClass("present");
-
+    if (timeSlotParsed < currentHourParsed) {
+        if (timeSlotParsed === 9) {
+            $(".0" + [i + 9]).removeClass("present").removeClass("future").addClass("past");
+        } else {
+            $("." + [i + 9]).removeClass("present").removeClass("future").addClass("past");
+        }
+    } else if (timeSlotParsed === currentHourParsed) {
+        if (timeSlotParsed === 9) {
+            $(".0" + [i + 9]).removeClass("past").removeClass("future").addClass("present");
+        } else {
+            $("." + [i + 9]).removeClass("past").removeClass("future").addClass("present");
+        }
     } else {
-        $("." + [i + 9]).removeClass("past").removeClass("present").addClass("future");
+        if (timeSlotParsed === 9) {
+            $(".0" + [i + 9]).removeClass("past").removeClass("present").addClass("future");
+        } else {
+            $("." + [i + 9]).removeClass("past").removeClass("present").addClass("future");
+        }
     }
     };
 };
