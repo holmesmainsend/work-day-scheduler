@@ -11,3 +11,6 @@ A web application allowing you to organize your work day, hour by hour, with edi
 
 ## Website
 https://holmesmainsend.github.io/work-day-scheduler/
+
+## Questions?
+https://github.com/holmesmainsend
